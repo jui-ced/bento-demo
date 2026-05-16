@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0068)file:///C:/Users/%EC%B5%9C%EC%A7%80%EC%9A%B0/Downloads/bento_12.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bento — AI 통합 아카이빙</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="./bento2_files/tabler-icons.min.css">
 <style>
 :root {
   --bg: #f7f7f5;
@@ -53,7 +53,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .topbar { padding: 11px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; background: var(--bg); }
 .search-wrap { flex: 1; position: relative; display: flex; align-items: center; }
 .search-wrap .si { position: absolute; left: 10px; font-size: 15px; color: var(--text3); pointer-events: none; line-height: 1; }
-.search-wrap input { width: 100%; padding: 7px 12px 7px 34px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; background: var(--bg2); color: var(--text); outline: none; }
+.search-wrap input { width: 100%; padding: 11px 12px 11px 34px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; background: var(--bg2); color: var(--text); outline: none; }
 .search-wrap input:focus { border-color: var(--teal); }
 .btn-add { display: flex; align-items: center; gap: 5px; padding: 7px 13px; background: var(--teal); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; }
 .btn-add:hover { background: var(--teal-dark); }
@@ -158,7 +158,18 @@ textarea.inp { resize: vertical; min-height: 75px; }
   <!-- Sidebar -->
   <div class="sidebar">
     <div class="logo">
-      <div class="logo-box"><span></span><span></span><span></span><span></span></div>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="28" height="28" rx="6" fill="#1D9E75"></rect>
+  <!-- 왼쪽 상단: 흰색 큰 정사각형 -->
+  <rect x="4" y="4" width="9" height="9" rx="2" fill="white"></rect>
+  <!-- 오른쪽 상단: 반투명 큰 정사각형 -->
+  <rect x="15" y="4" width="9" height="9" rx="2" fill="white" fill-opacity="0.5"></rect>
+  <!-- 왼쪽 하단: 반투명 큰 정사각형 -->
+  <rect x="4" y="15" width="9" height="9" rx="2" fill="white" fill-opacity="0.5"></rect>
+  <!-- 오른쪽 하단: 위아래 직사각형 2개 -->
+  <rect x="15" y="15" width="9" height="4" rx="1" fill="white" fill-opacity="0.5"></rect>
+  <rect x="15" y="20" width="9" height="4" rx="1" fill="white" fill-opacity="0.5"></rect>
+</svg>
       <div>
         <div class="logo-text">Bento</div>
         <div style="font-size:11px;color:#9a9a94;font-weight:400;margin-top:1px;">신수동오이</div>
@@ -166,19 +177,22 @@ textarea.inp { resize: vertical; min-height: 75px; }
     </div>
     <div class="nav active" id="nav-home" onclick="goHome()"><i class="ti ti-home"></i> 홈</div>
     <div class="nav" id="nav-mypage"><i class="ti ti-user"></i> 마이페이지</div>
+    <div style="padding:10px 16px 4px;">
+      <button onclick="openModal()" style="width:100%;padding:10px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;"><i class="ti ti-plus"></i> 저장하기</button>
+    </div>
     <div class="sec-label">저장소</div>
-    <div class="cat-nav" id="si-쇼핑" onclick="goStore('쇼핑')"><span class="dot" style="background:#1D9E75"></span>쇼핑<span class="cnt" id="c-쇼핑">0</span></div>
-    <div class="cat-nav" id="si-라이프" onclick="goStore('라이프')"><span class="dot" style="background:#378ADD"></span>라이프<span class="cnt" id="c-라이프">0</span></div>
-    <div class="cat-nav" id="si-지식·팁" onclick="goStore('지식·팁')"><span class="dot" style="background:#BA7517"></span>지식·팁<span class="cnt" id="c-지식·팁">0</span></div>
+    <div class="cat-nav" id="si-라이프" onclick="goStore(&#39;라이프&#39;)"><span class="dot" style="background:#378ADD"></span>라이프<span class="cnt" id="c-라이프">2</span></div>
+    <div class="cat-nav" id="si-쇼핑" onclick="goStore(&#39;쇼핑&#39;)"><span class="dot" style="background:#1D9E75"></span>쇼핑<span class="cnt" id="c-쇼핑">2</span></div>
+    <div class="cat-nav" id="si-지식·팁" onclick="goStore(&#39;지식·팁&#39;)"><span class="dot" style="background:#BA7517"></span>지식·팁<span class="cnt" id="c-지식·팁">1</span></div>
 
-    <div class="cat-nav" id="si-미분류" onclick="goStore('미분류')">
+    <div class="cat-nav" id="si-미분류" onclick="goStore(&#39;미분류&#39;)">
       <span class="dot" style="background:#888780"></span>미분류
       <span class="cnt" id="c-미분류">0</span>
       <span class="none-badge" id="none-badge" style="display:none;"></span>
     </div>
     <div class="sidebar-footer">
       <div class="lbl">총 저장</div>
-      <div class="num" id="total">0</div>
+      <div class="num" id="total">5</div>
     </div>
   </div>
 
@@ -187,11 +201,66 @@ textarea.inp { resize: vertical; min-height: 75px; }
     <div class="topbar">
       <div class="search-wrap">
         <i class="ti ti-search si"></i>
-        <input type="text" placeholder="스마트 검색..." id="search-inp" oninput="doSearch()">
+        <input type="text" placeholder="스마트 검색" id="search-inp" oninput="doSearch()">
       </div>
-      <button class="btn-add" onclick="openModal()"><i class="ti ti-plus"></i> 저장하기</button>
+
     </div>
-    <div class="content" id="content"></div>
+    <div class="content" id="content"><div class="store-grid"><div class="store-card"><div class="store-card-icon">🌿</div><div class="store-card-name">라이프</div><div class="store-card-cnt">아이템 2개</div></div><div class="store-card"><div class="store-card-icon">🛍️</div><div class="store-card-name">쇼핑</div><div class="store-card-cnt">아이템 2개</div></div><div class="store-card"><div class="store-card-icon">📚</div><div class="store-card-name">지식·팁</div><div class="store-card-cnt">아이템 1개</div></div><div class="store-card"><div class="store-card-icon">📦</div><div class="store-card-name">미분류</div><div class="store-card-cnt">아이템 0개</div></div></div><div class="section-label" style="margin-top: 4px;">최근 저장</div><div class="item-card" style="cursor: pointer;">
+    <div class="thumb">✨</div>
+    <div class="item-info">
+      <div class="item-title">비타민C 세럼</div>
+      <div class="item-meta">
+        <span class="badge b-shop">쇼핑</span>
+        <span>1일 전</span>
+        <button class="edit-btn" onclick="event.stopPropagation();openEdit(1)">수정</button>
+      </div>
+      <div class="item-summary">올리브영 비타민C 세럼</div>
+    </div>
+    <i class="ti ti-chevron-right" style="font-size:14px;color:#9a9a94;flex-shrink:0;align-self:center;"></i></div><div class="item-card" style="cursor: pointer;">
+    <div class="thumb">👟</div>
+    <div class="item-info">
+      <div class="item-title">나이키 에어맥스 97 화이트</div>
+      <div class="item-meta">
+        <span class="badge b-shop">쇼핑</span>
+        <span>2일 전</span>
+        <button class="edit-btn" onclick="event.stopPropagation();openEdit(2)">수정</button>
+      </div>
+      <div class="item-summary">나이키 공식 홈페이지. 에어맥스 97 화이트 컬러웨이 ₩189,900</div>
+    </div>
+    <i class="ti ti-chevron-right" style="font-size:14px;color:#9a9a94;flex-shrink:0;align-self:center;"></i></div><div class="item-card" style="cursor: pointer;">
+    <div class="thumb">🌴</div>
+    <div class="item-info">
+      <div class="item-title">제주도 3박 4일 숙소 추천</div>
+      <div class="item-meta">
+        <span class="badge b-life">라이프</span>
+        <span>3일 전</span>
+        <button class="edit-btn" onclick="event.stopPropagation();openEdit(3)">수정</button>
+      </div>
+      <div class="item-summary">제주 서귀포 감성숙소 TOP 10, 가격대별 정리</div>
+    </div>
+    <i class="ti ti-chevron-right" style="font-size:14px;color:#9a9a94;flex-shrink:0;align-self:center;"></i></div><div class="item-card" style="cursor: pointer;">
+    <div class="thumb">🍽️</div>
+    <div class="item-info">
+      <div class="item-title">혼자 떠나는 제주 맛집 리스트</div>
+      <div class="item-meta">
+        <span class="badge b-life">라이프</span>
+        <span>4일 전</span>
+        <button class="edit-btn" onclick="event.stopPropagation();openEdit(4)">수정</button>
+      </div>
+      <div class="item-summary">제주 현지인 추천 맛집 20곳 정리</div>
+    </div>
+    <i class="ti ti-chevron-right" style="font-size:14px;color:#9a9a94;flex-shrink:0;align-self:center;"></i></div><div class="item-card" style="cursor: pointer;">
+    <div class="thumb">📝</div>
+    <div class="item-info">
+      <div class="item-title">피부 루틴 메모</div>
+      <div class="item-meta">
+        <span class="badge b-know">지식·팁</span>
+        <span>5일 전</span>
+        <button class="edit-btn" onclick="event.stopPropagation();openEdit(5)">수정</button>
+      </div>
+      <div class="item-summary">세럼 → 에센스 → 크림 순 레이어링. 아침 선크림 필수</div>
+    </div>
+    <i class="ti ti-chevron-right" style="font-size:14px;color:#9a9a94;flex-shrink:0;align-self:center;"></i></div></div>
     <div class="statusbar">
       <div class="status-dot"></div>
       <span>AI 분류 엔진 연결됨</span>
@@ -205,9 +274,9 @@ textarea.inp { resize: vertical; min-height: 75px; }
   <div class="modal">
     <div class="modal-title"><i class="ti ti-sparkles"></i> 새 항목 저장</div>
     <div class="m-tabs">
-      <div class="m-tab active" id="mt-url" onclick="switchTab('url')"><i class="ti ti-link"></i> URL</div>
-      <div class="m-tab" id="mt-img" onclick="switchTab('img')"><i class="ti ti-photo"></i> 이미지</div>
-      <div class="m-tab" id="mt-txt" onclick="switchTab('txt')"><i class="ti ti-pencil"></i> 텍스트</div>
+      <div class="m-tab active" id="mt-url" onclick="switchTab(&#39;url&#39;)"><i class="ti ti-link"></i> URL</div>
+      <div class="m-tab" id="mt-img" onclick="switchTab(&#39;img&#39;)"><i class="ti ti-photo"></i> 이미지</div>
+      <div class="m-tab" id="mt-txt" onclick="switchTab(&#39;txt&#39;)"><i class="ti ti-pencil"></i> 텍스트</div>
     </div>
     <div id="p-url">
       <div class="inp-label">링크 붙여넣기</div>
@@ -215,7 +284,7 @@ textarea.inp { resize: vertical; min-height: 75px; }
       <div id="url-result"></div>
     </div>
     <div id="p-img" style="display:none;">
-      <div class="drop-zone" onclick="document.getElementById('file-inp').click()" ondragover="event.preventDefault()" ondrop="onDrop(event)">
+      <div class="drop-zone" onclick="document.getElementById(&#39;file-inp&#39;).click()" ondragover="event.preventDefault()" ondrop="onDrop(event)">
         <input type="file" id="file-inp" accept="image/*" onchange="onFile(event)" style="display:none;">
         <i class="ti ti-cloud-upload dz-icon"></i>
         <p>클릭하거나 이미지를 드래그하세요<br><small style="color:#9a9a94;">스크린샷·캡처 이미지 지원</small></p>
@@ -232,11 +301,22 @@ textarea.inp { resize: vertical; min-height: 75px; }
     </div>
     <div class="btn-row">
       <button class="btn-cancel" onclick="closeModal()">취소</button>
-      <button class="btn-save" id="btn-save" onclick="saveItem()" disabled>AI 분류 후 저장</button>
+      <button class="btn-save" id="btn-save" onclick="saveItem()" disabled="">AI 분류 후 저장</button>
     </div>
   </div>
 </div>
 
+
+<!-- 상세 보기 모달 -->
+<div class="modal-bg" id="detail-modal" style="display:none;" onclick="if(event.target===this)closeDetail()">
+  <div class="modal" style="width:480px;max-height:85vh;">
+    <div class="modal-title"><i class="ti ti-external-link"></i> <span id="detail-title">상세 보기</span></div>
+    <div id="detail-body"></div>
+    <div class="btn-row" style="margin-top:12px;">
+      <button class="btn-cancel" onclick="closeDetail()">닫기</button>
+    </div>
+  </div>
+</div>
 <!-- 카테고리 수정 모달 -->
 <div class="modal-bg" id="edit-modal" style="display:none;" onclick="if(event.target===this)closeEdit()">
   <div class="modal" style="width:340px;">
@@ -244,10 +324,10 @@ textarea.inp { resize: vertical; min-height: 75px; }
     <div style="font-size:13px;color:var(--text2);margin-bottom:12px;" id="edit-title-lbl"></div>
     <div class="inp-label">저장소 선택</div>
     <div class="cat-picker" style="gap:7px;" id="edit-picker">
-      <button class="cat-btn b-shop" onclick="pickCat('쇼핑')">쇼핑</button>
-      <button class="cat-btn b-life" onclick="pickCat('라이프')">라이프</button>
-      <button class="cat-btn b-know" onclick="pickCat('지식·팁')">지식·팁</button>
-      <button class="cat-btn b-none" onclick="pickCat('미분류')">미분류</button>
+      <button class="cat-btn b-shop" onclick="pickCat(&#39;쇼핑&#39;)">쇼핑</button>
+      <button class="cat-btn b-life" onclick="pickCat(&#39;라이프&#39;)">라이프</button>
+      <button class="cat-btn b-know" onclick="pickCat(&#39;지식·팁&#39;)">지식·팁</button>
+      <button class="cat-btn b-none" onclick="pickCat(&#39;미분류&#39;)">미분류</button>
     </div>
     <div class="btn-row">
       <button class="btn-cancel" onclick="closeEdit()">취소</button>
@@ -257,7 +337,7 @@ textarea.inp { resize: vertical; min-height: 75px; }
 </div>
 
 <script>
-const CATS = ['쇼핑','라이프','지식·팁','미분류'];
+const CATS = ['라이프','쇼핑','지식·팁','미분류'];
 const CAT_BADGE = {'쇼핑':'b-shop','라이프':'b-life','지식·팁':'b-know','미분류':'b-none'};
 const CAT_EMOJI_DEF = {'쇼핑':'🛍️','라이프':'📱','지식·팁':'📚','미분류':'📦'};
 const STORE_ICONS = {'쇼핑':'🛍️','라이프':'🌿','지식·팁':'📚','미분류':'📦'};
@@ -271,11 +351,11 @@ const DOMAIN_MAP = [
 ];
 
 let items = [
-  {id:1,type:'url',title:'나이키 에어맥스 97 화이트',category:'쇼핑',summary:'나이키 공식 홈페이지. 에어맥스 97 화이트 컬러웨이 ₩189,900',emoji:'👟',time:'2일 전',folder:null},
-  {id:2,type:'url',title:'제주도 3박 4일 숙소 추천',category:'라이프',summary:'제주 서귀포 감성숙소 TOP 10, 가격대별 정리',emoji:'🌴',time:'3일 전',folder:'제주도 여행'},
-  {id:3,type:'txt',title:'피부 루틴 메모',category:'지식·팁',summary:'세럼 → 에센스 → 크림 순 레이어링. 아침 선크림 필수',emoji:'📝',time:'5일 전',folder:null},
-  {id:4,type:'url',title:'올리브영 비타민C 세럼 비교',category:'쇼핑',summary:'올리브영 인기 비타민C 세럼 브랜드별 성분·가격 비교',emoji:'✨',time:'1일 전',folder:'봄 뷰티 위시리스트'},
-  {id:5,type:'url',title:'혼자 떠나는 제주 맛집 리스트',category:'라이프',summary:'제주 현지인 추천 맛집 20곳 정리',emoji:'🍽️',time:'4일 전',folder:'제주도 여행'},
+  {id:1,type:'url',title:'비타민C 세럼',category:'쇼핑',summary:'올리브영 비타민C 세럼',emoji:'✨',time:'1일 전',folder:'봄 뷰티 위시리스트',url:'https://oliveyoung.co.kr'},
+  {id:2,type:'url',title:'나이키 에어맥스 97 화이트',category:'쇼핑',summary:'나이키 공식 홈페이지. 에어맥스 97 화이트 컬러웨이 ₩189,900',emoji:'👟',time:'2일 전',folder:null,url:'https://nike.com'},
+  {id:3,type:'url',title:'제주도 3박 4일 숙소 추천',category:'라이프',summary:'제주 서귀포 감성숙소 TOP 10, 가격대별 정리',emoji:'🌴',time:'3일 전',folder:'제주도 여행',url:'https://blog.naver.com'},
+  {id:4,type:'url',title:'혼자 떠나는 제주 맛집 리스트',category:'라이프',summary:'제주 현지인 추천 맛집 20곳 정리',emoji:'🍽️',time:'4일 전',folder:'제주도 여행',url:'https://blog.naver.com'},
+  {id:5,type:'txt',title:'피부 루틴 메모',category:'지식·팁',summary:'세럼 → 에센스 → 크림 순 레이어링. 아침 선크림 필수',emoji:'📝',time:'5일 전',folder:null,url:''},
 ];
 let folders = [
   {id:'f1',store:'라이프',name:'제주도 여행'},
@@ -300,9 +380,9 @@ URL: ${url}
 경로: ${path}
 
 분류 기준:
-- 쇼핑: 쇼핑몰·상품·의류·신발·뷰티·가전·구매 관련 (nike, coupang, musinsa, oliveyoung, 29cm, zigzag 등)
-- 라이프: 맛집·여행·숙소·카페·SNS·유튜브·뉴스·지도·일상 콘텐츠
-- 지식·팁: 블로그·아티클·공부·개발·레시피·튜토리얼·위키·정보성 글
+- 라이프: 맛집·카페, 여행·숙소, 유튜브·영상·SNS·뉴스·지도·일상 콘텐츠
+- 쇼핑: 쇼핑몰·상품·패션·뷰티·가전·가격비교·구매 관련 (nike, coupang, musinsa, oliveyoung 등)
+- 지식·팁: 뷰티 루틴, 학습·공부법, 건강·운동, 레시피, 개발·튜토리얼, 정보성 글·블로그
 - 미분류: 위 셋 어디도 해당 안 될 때만 (최대한 피할 것)
 
 {"category":"쇼핑|라이프|지식·팁|미분류","title":"제목(한국어20자이내)","summary":"2문장요약(한국어)","emoji":"관련이모지1개"}`;
@@ -312,9 +392,9 @@ function buildImgPrompt() {
   return `이 이미지를 분석하고 JSON만 반환하세요 (다른 텍스트, 마크다운 없이 순수 JSON만).
 
 이미지에서 다음을 확인하세요:
-- 상품 이미지, 가격 정보, 쇼핑몰 UI → 쇼핑
-- 음식 사진, 장소·지도, 여행 관련, SNS 게시물, 숙소 → 라이프
-- 텍스트 위주 화면, 코드, 강의, 레시피, 공부 자료 → 지식·팁
+- 상품 이미지, 가격 정보, 쇼핑몰 UI, 패션·뷰티·가전 구매 관련 → 구매 고려용
+- 음식·카페 사진, 장소·지도, 여행·숙소, SNS 게시물, 영상 콘텐츠 → 콘텐츠 소비용
+- 텍스트 위주 화면, 코드, 강의, 레시피, 루틴, 공부·운동·건강 자료 → 지식·팁 저장용
 - 위 셋 어디도 해당 없을 때만 → 미분류
 
 제목은 이미지에서 보이는 핵심 내용으로 만들어주세요.
@@ -341,7 +421,8 @@ function init() { render(); updateCounts(); }
 
 function updateCounts() {
   CATS.forEach(cat => {
-    document.getElementById('c-'+cat).textContent = items.filter(i=>i.category===cat).length;
+    const el = document.getElementById('c-'+cat);
+    if(el) el.textContent = items.filter(i=>i.category===cat).length;
   });
   document.getElementById('total').textContent = items.length;
   const n=items.filter(i=>i.category==='미분류').length;
@@ -385,7 +466,7 @@ function renderHome(c) {
   lbl.style.marginTop='4px';
   c.appendChild(lbl);
 
-  let recent=[...items].reverse().slice(0,5);
+  let recent=[...items].slice(0,5);
   if(searchQ) recent=recent.filter(i=>matches(i,searchQ));
   if(recent.length) recent.forEach(i=>c.appendChild(makeCard(i)));
   else c.appendChild(makeEmpty('아직 저장된 항목이 없어요.\n링크·이미지·텍스트를 저장하면 AI가 자동 분류해요.'));
@@ -418,7 +499,7 @@ function renderStore(c) {
   const ilbl=el('div','section-label');
   ilbl.innerHTML=`<span>미배정 항목</span><span style="font-size:11px;color:var(--text3);">${storeItems.length}개</span>`;
   c.appendChild(ilbl);
-  if(storeItems.length) storeItems.slice().reverse().forEach(i=>c.appendChild(makeCard(i)));
+  if(storeItems.length) storeItems.forEach(i=>c.appendChild(makeCard(i)));
   else c.appendChild(makeEmpty('폴더에 배정되지 않은 항목이 없어요.'));
 }
 
@@ -429,12 +510,13 @@ function renderFolder(c) {
   const lbl=el('div','section-label');
   lbl.innerHTML=`<span>${currentFolder}</span><span style="font-size:11px;color:var(--text3);">${fi.length}개</span>`;
   c.appendChild(lbl);
-  if(fi.length) fi.slice().reverse().forEach(i=>c.appendChild(makeCard(i)));
+  if(fi.length) fi.forEach(i=>c.appendChild(makeCard(i)));
   else c.appendChild(makeEmpty('이 폴더에 저장된 항목이 없어요.'));
 }
 
 function makeCard(item) {
   const card=el('div','item-card');
+  card.style.cursor='pointer';
   const bc=CAT_BADGE[item.category]||'b-none';
   const tc={'url':'링크','img':'이미지','txt':'메모'}[item.type]||item.type;
   card.innerHTML=`
@@ -443,15 +525,42 @@ function makeCard(item) {
       <div class="item-title">${item.title}</div>
       <div class="item-meta">
         <span class="badge ${bc}">${item.category}</span>
-
-        <span class="type-tag">${tc}</span>
         <span>${item.time}</span>
-        <button class="edit-btn" onclick="openEdit(${item.id})">수정</button>
+        <button class="edit-btn" onclick="event.stopPropagation();openEdit(${item.id})">수정</button>
       </div>
       <div class="item-summary">${item.summary||''}</div>
-    </div>`;
+    </div>
+    <i class="ti ti-chevron-right" style="font-size:14px;color:#9a9a94;flex-shrink:0;align-self:center;"></i>`;
+  card.onclick=()=>openDetail(item.id);
   return card;
 }
+
+function openDetail(id) {
+  const item=items.find(i=>i.id===id);
+  if(!item) return;
+  document.getElementById('detail-title').textContent=item.title;
+  const bc=CAT_BADGE[item.category]||'b-none';
+  let body='';
+  if(item.type==='img'&&item.thumb) {
+    body+=`<img src="${item.thumb}" alt="${item.title}" style="width:100%;max-height:300px;object-fit:contain;border-radius:8px;border:1px solid #e0dfd9;margin-bottom:12px;">`;
+  }
+  if(item.url) {
+    body+=`<div style="margin-bottom:10px;"><div style="font-size:11px;color:#9a9a94;margin-bottom:4px;">원본 링크</div>
+    <a href="${item.url}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:9px 12px;background:#f7f7f5;border:1px solid #e0dfd9;border-radius:8px;font-size:13px;color:#1D9E75;text-decoration:none;word-break:break-all;">
+      <i class="ti ti-external-link" style="flex-shrink:0;"></i>${item.url}
+    </a></div>`;
+  }
+  body+=`<div style="margin-bottom:10px;"><div style="font-size:11px;color:#9a9a94;margin-bottom:4px;">요약</div>
+  <div style="font-size:13px;color:#5a5a55;line-height:1.6;padding:9px 12px;background:#f7f7f5;border-radius:8px;">${item.summary||'-'}</div></div>`;
+  body+=`<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+    <span class="badge ${bc}">${item.category}</span>
+    ${item.folder?`<span style="font-size:11px;color:#9a9a94;">📁 ${item.folder}</span>`:''}
+    <span style="font-size:11px;color:#9a9a94;">${item.time}</span>
+  </div>`;
+  document.getElementById('detail-body').innerHTML=body;
+  document.getElementById('detail-modal').style.display='flex';
+}
+function closeDetail(){document.getElementById('detail-modal').style.display='none';}
 
 function makeBreadcrumb(crumbs) {
   const bc=el('div','breadcrumb');
@@ -629,5 +738,6 @@ function confirmEdit(){if(!editId||!editCat)return;const item=items.find(i=>i.id
 
 init();
 </script>
-</body>
-</html>
+
+
+</body></html>
